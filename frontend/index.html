@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>BNCC Feedback Form</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h1>Feedback Acara Internal BNCC</h1>
+    <form id="feedback-form">
+        <label for="name">Nama:</label>
+        <input type="text" id="name" name="name" required><br>
+
+        <label for="eventName">Nama Acara:</label>
+        <input type="text" id="eventName" name="eventName" required><br>
+
+        <label for="division">Divisi Acara:</label>
+        <select id="division" name="division" required>
+            <option value="LnT">LnT</option>
+            <option value="EEO">EEO</option>
+            <option value="PR">PR</option>
+            <option value="HRD">HRD</option>
+            <option value="RnD">RnD</option>
+            </select><br>
+
+        <label for="rating">Rating (1-5):</label>
+        <input type="number" id="rating" name="rating" min="1" max="5" required><br>
+
+        <label for="comment">Komentar:</label>
+        <textarea id="comment" name="comment"></textarea><br>
+        
+        <button type="submit">Kirim Feedback</button>
+        <p id="message"></p>
+    </form>
+    <script src="js/feedback.js"></script>
+</body>
+</html>

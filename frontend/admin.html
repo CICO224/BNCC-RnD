@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin Panel Feedback</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <h1>Admin Panel Feedback BNCC</h1>
+
+    <div id="controls">
+        <input type="text" id="search-input" placeholder="Cari Event atau Nama">
+        <select id="status-filter">
+            <option value="">Semua Status</option>
+            <option value="open">Open</option>
+            <option value="in-review">In Review</option>
+            <option value="resolved">Resolved</option>
+        </select>
+    </div>
+
+    <table id="feedback-table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Nama</th>
+                <th>Event</th>
+                <th>Rating</th>
+                <th>Status</th>
+                <th>Aksi</th>
+            </tr>
+        </thead>
+        <tbody>
+            </tbody>
+    </table>
+
+    <script src="js/admin.js"></script>
+</body>
+</html>
