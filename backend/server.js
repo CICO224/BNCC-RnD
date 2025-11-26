@@ -1,6 +1,6 @@
 const express = require('express');
 const cors = require('cors');
-const { v4: uuidv4 } = require('uuid'); // Library untuk membuat ID unik
+const { v4: uuidv4 } = require('uuid');
 
 const app = express();
 const PORT = 3001;
