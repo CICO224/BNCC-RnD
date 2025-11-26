@@ -3,22 +3,16 @@ const cors = require('cors');
 const { v4: uuidv4 } = require('uuid'); // Library untuk membuat ID unik
 
 const app = express();
-const PORT = 3001; // Sesuai dengan konfigurasi di JS Frontend Anda
+const PORT = 3001;
 
-// Middleware
-app.use(cors()); // Mengizinkan frontend mengakses backend ini
-app.use(express.json()); // Agar bisa membaca data JSON dari body request
-
-// --- DATABASE SEMENTARA (In-Memory) ---
-// Data akan hilang jika server dimatikan. 
-// Untuk produksi, ganti ini dengan database sungguhan (MySQL/MongoDB).
+app.use(cors()); 
+app.use(express.json());
+.
 let feedbacks = [
     
 ];
 
-// --- ROUTES (Endpoints) ---
-
-// 1. READ (GET): Ambil data dengan fitur Search & Filter
+// 1. READ (GET)
 app.get('/api/feedback', (req, res) => {
     const { status, search } = req.query;
     
@@ -41,17 +35,17 @@ app.get('/api/feedback', (req, res) => {
     res.json(result);
 });
 
-// 2. CREATE (POST): Tambah Feedback baru
+// 2. CREATE (POST)
 app.post('/api/feedback', (req, res) => {
     const { name, eventName, division, rating, comment } = req.body;
 
-    // Validasi sederhana
+    // Validation
     if (!name || !eventName || !rating) {
         return res.status(400).json({ message: "Nama, Event, dan Rating wajib diisi!" });
     }
 
     const newFeedback = {
-        id: uuidv4(), // Generate ID unik string
+        id: uuidv4(),
         name,
         eventName,
         division,
@@ -66,7 +60,7 @@ app.post('/api/feedback', (req, res) => {
     res.status(201).json(newFeedback);
 });
 
-// 3. UPDATE (PUT): Ubah Status Feedback
+// 3. UPDATE (PUT)
 app.put('/api/feedback/:id', (req, res) => {
     const { id } = req.params;
     const { status } = req.body;
@@ -82,7 +76,7 @@ app.put('/api/feedback/:id', (req, res) => {
     }
 });
 
-// 4. DELETE (DELETE): Hapus Feedback
+// 4. DELETE (DELETE)
 app.delete('/api/feedback/:id', (req, res) => {
     const { id } = req.params;
     const initialLength = feedbacks.length;
