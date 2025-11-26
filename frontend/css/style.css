@@ -1,0 +1,123 @@
+/* Mengimport font Poppins agar terlihat modern seperti di desain referensi */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
+/* Reset dasar */
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f7f9; /* Warna background abu-abu muda */
+    margin: 0;
+    padding: 40px 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+}
+
+/* Styling Judul Halaman */
+h1 {
+    color: #1a1a1a;
+    font-size: 24px;
+    margin-bottom: 25px;
+    text-align: center;
+    font-weight: 600;
+}
+
+/* Container Form (Kotak Putih) */
+form {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 500px; /* Membatasi lebar agar rapi */
+    padding: 35px;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05); /* Bayangan halus */
+    border: 1px solid #eef1f5;
+}
+
+/* Menyembunyikan tag <br> agar kita bisa atur jarak pakai CSS (lebih rapi) */
+form br {
+    display: none;
+}
+
+/* Styling Label */
+label {
+    display: block; /* Memaksa label jadi baris baru */
+    font-weight: 500;
+    color: #34495e;
+    margin-bottom: 8px;
+    margin-top: 20px; /* Jarak antar input */
+    font-size: 14px;
+}
+
+/* Agar label pertama tidak punya margin atas berlebih */
+label:first-of-type {
+    margin-top: 0;
+}
+
+/* Styling Input, Select, dan Textarea */
+input[type="text"],
+input[type="number"],
+select,
+textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #dde2e5;
+    border-radius: 8px;
+    font-size: 14px;
+    font-family: inherit;
+    color: #333;
+    background-color: #fff;
+    transition: all 0.3s ease;
+}
+
+/* Efek saat input diklik (Focus) */
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    border-color: #003366; /* Warna Biru BNCC */
+    box-shadow: 0 0 0 3px rgba(0, 51, 102, 0.1);
+}
+
+/* Khusus Textarea agar bisa diresize vertikal saja */
+textarea {
+    min-height: 100px;
+    resize: vertical;
+}
+
+/* Styling Placeholder (teks samar di dalam input) */
+::placeholder {
+    color: #aab7c4;
+}
+
+/* Styling Tombol Submit */
+button[type="submit"] {
+    display: block;
+    width: 100%;
+    background-color: #003366; /* Warna Biru gelap mirip referensi */
+    color: #ffffff;
+    font-weight: 600;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    margin-top: 30px;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s ease;
+}
+
+button[type="submit"]:hover {
+    background-color: #002244; /* Warna lebih gelap saat hover */
+}
+
+/* Styling Pesan Error/Sukses di bawah tombol */
+#message {
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+    font-weight: 500;
+}
